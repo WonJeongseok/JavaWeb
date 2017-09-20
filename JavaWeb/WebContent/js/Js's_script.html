@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+	<!-- <script type="text/javascript">
+	
+		var x;
+	
+	</script> -->
+	<script type="text/javascript">
+	/* var x;
+	
+	alert(x)
+		alert(x==undefined);   	//true ()
+		alert(x=="undefined"); 	//false() */
+		
+	/* var x={};
+	
+	x.name = "PeBriQ";
+	x.phone = "010-9999-9999";
+	
+	alert(x.name); */
+	
+	
+	/*---------------------------------------17/09/01 ( 금 )------------------------------------  */
+	
+	
+	/* var json = [
+						{ id:"1", title:"hello", "writer id":"Pebriq" }
+						{ id:"2", title:"good", "writer id":"pebriQ" }
+				  ];
+		
+		alert(json[1].title);
+		alert(json[2]["title"]);
+		alert(json[1]["writer id"]);
+		
+	
+		
+ 	var data = eval("var x = 3; x++;");
+ 	alert(x);
+ 	
+ 	var data = eval("[2,4,6]")	;
+ 	alert(data[1]);
+ 	
+ 	
+ 	var data=JSON.parse("[2,4,6]");
+ 	alert(data[2]);
+		
+ 	var data = eval('({ id:"1", title:"good", "writer id":"Pebriq" })');
+ 	var data=JSON.parse('{"id":"2", "title":"good", "writer id":"pebriQ" }');
+ 	alert(data.title);
+ 	altert((typeof data.title)) */
+ 	
+ 	
+ 	/*------------------------------------17/09/04 ( 월 )--------------------------------------------  */
+ 	
+ 	 /* var x = 3;
+ 	//var y = 4;
+ 	var y = new Number(3);
+ 	
+ 	alert(x==y);										// 값 비교
+ 	alert(x===y);										// 주소 비교 */
+ 	
+ 	
+ 	/* var x = 3;
+ 	var y = 4.5;
+ 	
+ 	alert(x+y);
+ 	alert(3+"4");										// +은 문자열
+ 	alert(3.5-"2");										// -는 숫자 */
+ 	
+ 	
+ 	//----------- for - in문??  --------------//  
+ 		
+ 			
+ 	/* var data = [2,4,6,8,0];
+ 	var entity = { Id:1, title:"Hello", writerId:"Pebriq" };
+ 	
+ 	for(var i=0; i<data.length; i++)
+ 		alert(data[i]);										//기존 for문
+ 		
+ 		
+ 	for (var i in data)
+ 		alert(data[i]);										// for-in 문
+ 	
+ 		
+ 	for(var k in entity)
+ 		alert(entity[k]); */
+ 		
+ 	
+ 		
+ 	//------------- Function?? ------------------//
+ 		
+ 		
+ 	// 자료형 필요 x, 필요한 인수만 선언
+ 
+ 	
+ 	
+ 	 /* var add = new Function("x, y" , "return x+y;");
+		alert(add(3,8)); */ 
+		
+	 /* var add = function(x,y){
+		return = x+y;
+	}; */
+	
+	/* var add = function(){
+		
+		
+		var sum=0;
+		
+		for(var i=0; i<arguments.length; i++)
+		sum += arguments[i];
+		
+		return sum;
+	
+	};
+ 			
+	alert(add(1,2,3,4,5,)); */ 
+	
+	/* var add = function(){
+		
+		var sum = 0;
+		
+		for(var i=0; i<arguments.length; i++)
+			sum += arguments[i];
+		
+		return sum;
+	}
+	
+	alert(add(2,4,6,8,9)); */
+ 			
+	//--------------------------------------------------------------------------//
+	
+	
+	
+	
+	//------------변수의 가시영역과 클로저(?)---------------//
+	
+		
+	/* alert(a);
+ 			
+	a=1; 
+	
+	
+	var a = 1;
+	var a = 2;
+	
+	alert(a); */									// 같은 변수명으로 선언하더라도 에러가 나지 않는다 !! 주의!!
+													
+ 		
+ 	
+ 	/*------------------------------------17/09/05 (화)------------------------------------------------  */
+ 	
+ 	
+ 	/* function f1(){
+		a=1;										// Global 객체 속성( a앞에 window가 생략되있다. window.a)
+	}
+ 	
+	f1();
+	alert(a);
+													// ExtondO (Extend + Object) */
+	
+	
+													
+	/* function f1(){
+		var a=1;								// f2에서 a를 return --->> f1의 a가 사라지지않는다.
+		return function f2(){
+			return a;
+		}
+	}
+	
+	var f = f1();
+	var a = f();				
+	alert(a);									// Closuer(?)
+	 */
+	//---------------------------------입출력플랫폼--------------------------//
+	
+	
+	//--------------------------------------------------------- 17/09/12 (화) ------------------------------------------------------------------//
+	
+	
+	//------------------------  Open a window 예제  -------------------------//
+		
+
+	window.onload = function(){
+		
+		var openButton = document.getElementById("open-button");
+		var movButton = document.getElementById("mov-button");
+		var win = null;
+		
+		openButton.onclick=function(){
+			if(win == null)
+				win=open("Notice.html", "_blank", "width=500px height=300px");
+		};
+		
+		movButton.onclick=function(){
+			if(win != null)
+				win.moveBy(-10, 0);
+		};
+	};
+	
+	
+	window.onload = function(){
+	
+		var navButton = document.getElementById("nav-button");
+		var win = window.frames[0];
+	
+		navButton.onclick=function(){
+		
+			win.location.href="https://www.daum.net";
+			
+		};
+	};
+	
+	
+	
+	
+	
+	
+	
+													
+	
+ 	
+	</script>
+</head>
+<body>
+	<hr/>
+	<!---------------- Inner Frame 예제  ------------------>
+	<div>
+		<input id="nav-button" type="button" value="페이지전환"/>
+		<iframe src="Notice.html" style="width:500px; height:300px;"></iframe>
+	</div>
+	
+	<hr/>
+	<div>
+		
+	</div>
+	<!-----------------Open a window 예제 ---------------->
+	<div>
+		<input id="open-button" type="button" value="새창띄우기"/>
+		<input id=mov-button" type="button" value="왼쪽으로 이동"/>
+	</div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

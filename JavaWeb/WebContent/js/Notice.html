@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script>
+
+	window.onload = function(){
+		
+		var start1Button = document.getElementById("start1");
+		var start2Button = document.getElementById("start2");
+		
+		start1Button.onclick = function(){
+			
+			var lbl = opener.documentgetElemetById("count-label");
+			lbl.textContent=59
+			
+		}
+		
+		start2Button.onclick = function(){
+			
+			var lbl = parent.documentgetElemetById("count-label");
+			lbl.textContent=59
+			
+		}
+	};
+
+</script>
+</head>
+<body>
+	공지사항 페이지
+	
+	<input id="start1"	value="opener timer start" />
+	<input id="start2"	value="parent timer start" />
+	
+</body>
+</html>
